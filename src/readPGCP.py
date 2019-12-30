@@ -9,7 +9,6 @@ def readPGCP():
     
     competitions = []
     for year in range(2015, now.year + 1):
-        print(year)
         url = 'http://iowfox.co.uk/pgcp/index_' + str(year) + '.html'
         page_response = requests.get(url)
         page = str(BeautifulSoup(page_response.content, "html.parser"))
@@ -75,6 +74,7 @@ def readPGCP():
                 url = comp[5].split('"')
                 C.SetUrl(url[1])
             
+            C.SetSport(0)
             competitions.append(C)
             
     return competitions
