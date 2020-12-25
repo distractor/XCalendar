@@ -10,25 +10,25 @@ from readSlocomps import *
 from readPWCA import *
 from readPGCP import *
 
-comps = readAirtribune()
+comps = readSlocomps()
 N = len(comps)
-print('Imported %d competitions from Airtribune.' % N)
+print('Imported %d competitions from Slocomps.' % N)
 
-comps += readLivetrack24()
-print('Imported %d competitions from Livetrack24.' % (len(comps) - N))
-N = len(comps)
+# comps += readAirtribune()
+# print('Imported %d competitions from Airtribune.' % (len(comps) - N))
+# N = len(comps)
 
-comps += readSlocomps()
-print('Imported %d competitions from Slocomps.' % (len(comps) - N))
-N = len(comps)
+# comps += readLivetrack24()
+# print('Imported %d competitions from Livetrack24.' % (len(comps) - N))
+# N = len(comps)
 
-comps += readPWCA()
-print('Imported %d competitions from PWCA.' % (len(comps) - N))
-N = len(comps)
+# comps += readPWCA()
+# print('Imported %d competitions from PWCA.' % (len(comps) - N))
+# N = len(comps)
 
-comps += readPGCP()
-print('Imported %d competitions from PGCP.' % (len(comps) - N))
-N = len(comps)
+# comps += readPGCP()
+# print('Imported %d competitions from PGCP.' % (len(comps) - N))
+# N = len(comps)
 
 cols = ['Name', 'Timezone', 'StartDate', 'EndDate', 'Country', 'Location', 'Lat', 'Lon', 'url', 'Sport', 'Filled']
 Names = [comp.Name for comp in comps]
